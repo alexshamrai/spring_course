@@ -1,9 +1,11 @@
 package org.example.spring_introduction;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Dog implements Pet {
 
 //    private String name;
-
     public Dog() {
         System.out.println("Dog bean is created");
     }
