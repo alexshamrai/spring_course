@@ -8,7 +8,21 @@ public class Book {
     @Value("War and peace")
     private String name;
 
+    @Value(("L.Tolstoi"))
+    private String author;
+
+    @Value("1866")
+    private int yearOfPublication;
+
     public String getName() {
         return name;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getYearOfPublication() {
+        return yearOfPublication;
     }
 }
