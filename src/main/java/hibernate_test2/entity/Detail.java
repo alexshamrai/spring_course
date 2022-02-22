@@ -1,10 +1,12 @@
 package hibernate_test2.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,6 +26,10 @@ public class Detail {
 
     @Column(name = "email")
     private String email;
+
+    @OneToOne(mappedBy = "empDetail",
+              cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
+    private Employee employee;
 
     public Detail() {
     }
@@ -76,6 +82,13 @@ public class Detail {
                 '}';
     }
 
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
 }
 
 
